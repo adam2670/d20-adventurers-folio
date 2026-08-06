@@ -1,0 +1,74 @@
+/* Adventurer's Folio — site styles. Self-contained: no fonts, scripts or
+   images fetched from anywhere, so the pages load instantly and work offline. */
+:root {
+  --parchment: #f3e9d2;
+  --parchment-dark: #e2d3b0;
+  --ink: #2b2118;
+  --ink-soft: #5b4a37;
+  --accent: #8c1f1a;
+  --rule: rgba(43, 33, 24, 0.22);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0 1.25rem 5rem;
+  background: linear-gradient(180deg, var(--parchment) 0%, var(--parchment-dark) 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.65;
+}
+.wrap { max-width: 46rem; margin: 0 auto; }
+header { text-align: center; padding: 3.5rem 0 1rem; }
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin: 0 0 .25rem;
+  letter-spacing: .01em;
+}
+.motto {
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+}
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+h2 {
+  font-size: 1.4rem;
+  margin: 2.5rem 0 .75rem;
+  color: var(--accent);
+}
+h3 { font-size: 1.1rem; margin: 1.75rem 0 .4rem; }
+a { color: var(--accent); }
+a:hover { text-decoration: none; }
+nav { text-align: center; margin-bottom: 1rem; }
+nav a { margin: 0 .75rem; white-space: nowrap; }
+ul { padding-left: 1.2rem; }
+li { margin: .4rem 0; }
+.lede { font-size: 1.1rem; }
+.card {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+.updated { color: var(--ink-soft); font-size: .9rem; }
+footer {
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: .9rem;
+}
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: .9em;
+  background: rgba(255,255,255,.45);
+  padding: .1em .35em;
+  border-radius: 4px;
+}
