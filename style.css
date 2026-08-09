@@ -72,3 +72,75 @@ code {
   padding: .1em .35em;
   border-radius: 4px;
 }
+
+/* ---------------------------------------------------------------------------
+   Imagery. Added when the page went from text to a showcase.
+
+   The text column stays 46rem — that is a comfortable measure and widening it
+   for the sake of pictures would hurt the reading. Figures break OUT of it
+   instead, via a negative margin capped by the viewport, so the prose keeps its
+   width and the art gets the room.
+
+   Every image carries width/height so the browser reserves its box before the
+   bytes land: without that the page reflows six times as it loads, which on a
+   phone reads as jitter.
+--------------------------------------------------------------------------- */
+figure { margin: 0; }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 14px rgba(43, 33, 24, .18);
+  background: rgba(255,255,255,.25);
+}
+figcaption {
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: .92rem;
+  margin-top: .5rem;
+}
+
+/* The playtable render, wider than the measure. */
+.hero { margin: .5rem 0 2rem; }
+.hero img { border-radius: 10px; }
+.wide { margin: 2rem 0; }
+
+/* Picture beside prose. Below 46rem it stacks, picture first — on a phone the
+   image is the thing that earns the scroll. */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 1.75rem;
+  align-items: center;
+  margin: 1.5rem 0 2.5rem;
+}
+.split > div > p:first-child { margin-top: 0; }
+.split > div > p:last-child { margin-bottom: 0; }
+.split.reverse > figure { order: 2; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+}
+.heroes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+.heroes figcaption { font-size: .82rem; }
+
+@media (max-width: 46rem) {
+  .split { grid-template-columns: 1fr; gap: 1.1rem; }
+  .split.reverse > figure { order: 0; }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .heroes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 30rem) {
+  .gallery, .heroes { grid-template-columns: 1fr; }
+}
