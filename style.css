@@ -143,20 +143,28 @@ figcaption {
   gap: 1.25rem;
   margin: 1.5rem 0 2.5rem;
 }
+/* The cast. FLEX RATHER THAN GRID because there are five of them: a four-column
+   grid leaves the fifth card alone against the left margin, and five columns
+   shrinks every card to a thumbnail. Wrapping and centring puts four on the
+   first row and the fifth under the middle of them, which is how a row of
+   cards laid on a table falls anyway. */
 .heroes {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin: 1.5rem 0 2.5rem;
 }
+.heroes figure { flex: 0 1 calc(25% - .75rem); }
 .heroes figcaption { font-size: .82rem; }
 
 @media (max-width: 46rem) {
   .split { grid-template-columns: 1fr; gap: 1.1rem; }
   .split.reverse > figure { order: 0; }
   .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .heroes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .heroes figure { flex-basis: calc(50% - .5rem); }
 }
 @media (max-width: 30rem) {
-  .gallery, .heroes { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
+  .heroes figure { flex-basis: calc(50% - .5rem); }
 }
