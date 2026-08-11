@@ -61,6 +61,18 @@ li { margin: .4rem 0; }
    left is what makes it read as a status note rather than as the download
    button someone arriving from a printed QR code is hoping for. */
 .card.pending { border-left: 4px solid var(--accent); }
+
+/* The 1.1 asterisk. Raised and small so it reads as a footnote mark rather
+   than as punctuation, and underlined only on hover so a page carrying four
+   of them does not look speckled. */
+.mark {
+  font-size: .8em;
+  vertical-align: super;
+  line-height: 0;
+  text-decoration: none;
+  padding: 0 .1em;
+}
+.mark:hover { text-decoration: underline; }
 footer {
   margin-top: 3.5rem;
   padding-top: 1.25rem;
