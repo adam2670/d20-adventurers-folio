@@ -16,7 +16,7 @@
      cards to five and back again in one morning, and a phone holding the
      middle stylesheet drew the new page two-up with a broken image where a
      deleted card used to be. Bump this whenever style.css changes shape. -->
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <div class="wrap">
@@ -52,6 +52,35 @@ table.</p>
   link lands on this page the day it is approved &mdash; the app is free, with
   two complete rule sets and every live-play feature in it.</p>
 </div>
+
+<!-- The walkthrough. Placed directly under "Getting it" because a reader
+     arriving from a printed flyer's QR code wants two things in this order:
+     how do I get it, and what does it actually look like.
+
+     The mp4 is HOTLINKED from praxis-hq.ai rather than copied here. Both sites
+     are Adam's, the file is already served there, and a second 21 MB copy in a
+     Pages repo buys nothing. The POSTER is local on purpose: if the remote ever
+     moves, the page still shows a still rather than a black rectangle.
+
+     NO <track> element. The captions are burned into the picture, which is why
+     the cut needs no sidecar and cannot fall out of sync with one.
+
+     The music credit below is NOT decoration — "Oppressive Gloom" is CC-BY 4.0
+     and the licence follows the work, so it must appear anywhere the video is
+     embedded, not only on praxis-hq.ai. If the soundtrack is ever replaced, or
+     the $30 no-attribution licence is bought, delete this credit in the same
+     commit that swaps the file. -->
+<figure class="wide">
+  <video controls preload="none" width="1920" height="1080"
+         poster="img/poster-folio.jpg"
+         src="https://praxis-hq.ai/assets/d20-folio-demo.mp4"></video>
+  <figcaption>A minute and a half, end to end &mdash; the sheet, the spell
+  library, the dice and a printed page. Captioned on screen.</figcaption>
+</figure>
+<p class="credit">Music: &ldquo;Oppressive Gloom&rdquo; by Kevin MacLeod
+(<a href="https://incompetech.com">incompetech.com</a>) &middot; licensed under
+<a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons: By
+Attribution 4.0</a></p>
 
 <hr>
 
@@ -96,7 +125,7 @@ table.</p>
   <figcaption>Every set in the tray, yours to switch between.</figcaption>
 </figure>
 
-<h2>Three rule sets. Two of them free.</h2>
+<h2>Four rule sets, and its own engine for each</h2>
 
 <div class="split">
   <figure>
@@ -105,8 +134,11 @@ table.</p>
   </figure>
   <div>
     <p><strong>1st Edition (1977&ndash;1988)</strong> and <strong>the 2024
-    revision</strong> are both in the app from the start. <strong>5th Edition
-    (2014)</strong> is a separate purchase for tables still playing it.</p>
+    revision</strong> are both in the app from the start and both free.
+    <strong>2nd Edition (1989&ndash;1999)</strong><a href="#next" class="mark">*</a>
+    &mdash; nine classes, seven races, THAC0 and its own saving-throw tables
+    &mdash; and <strong>5th Edition (2014)</strong> are each a separate purchase,
+    for tables still playing them.</p>
     <p>Each gets its own page architecture and its own correctly computed
     numbers &mdash; five saving throws or six, THAC0 or an attack bonus, weapon
     proficiencies or skills. Neither is a reskin of the other: the panels that
@@ -119,7 +151,7 @@ table.</p>
   </div>
 </div>
 
-<h2>Eleven classes, eleven painted pages</h2>
+<h2>Every hero gets a painted page</h2>
 
 <div class="split reverse">
   <figure>
@@ -187,23 +219,111 @@ around before you keep it. Or build one by hand, a line at a time.</p>
   <li><strong>Living sheets.</strong> Every value typeset onto painted art, editable in place.</li>
   <li><strong>Dice with weight.</strong> A 3D tray with collector-grade sets &mdash; tap a save or a check and watch it land.</li>
   <li><strong>A roll log.</strong> Every roll kept with the hero who made it and the arithmetic behind it, so &ldquo;what did I actually get?&rdquo; has an answer.</li>
-  <li><strong>Three rule sets.</strong> 1st Edition and the 2024 revision included; 5th Edition (2014) as a purchase. Each with its own painted panels and its own derived stats &mdash; and its own painted pages.<a href="#next" class="mark">*</a></li>
-  <li><strong>Eleven classes.</strong> Class-themed pages, ledgers and seals.</li>
+  <li><strong>Four rule sets.</strong> 1st Edition and the 2024 revision included; 2nd Edition<a href="#next" class="mark">*</a> and 5th Edition (2014) as purchases. Each with its own painted panels and its own derived stats &mdash; and its own painted pages.<a href="#next" class="mark">*</a></li>
+  <li><strong>A spell library.</strong> 1,461 spells across the rule sets &mdash; type a few letters on a hero's Grimoire and the entry completes itself, with full text for both fifth-edition rule sets and names and printed numbers for 1st and 2nd. Import a list your table sent and it sits alongside them.<a href="#next" class="mark">*</a></li>
+  <li><strong>Passing things across the table.</strong> AirDrop a hero, a spell list, or one item out of your pack into another player&rsquo;s &mdash; the sword leaves your sheet and arrives on theirs.<a href="#next" class="mark">*</a></li>
+  <li><strong>Painted class pages.</strong> Class-themed pages, ledgers and seals.</li>
   <li><strong>The Marshal&rsquo;s Board.</strong> Racial traits, class abilities and what your background gave you, at the foot of the sheet &mdash; filled in for you on a rolled hero.<a href="#next" class="mark">*</a></li>
   <li><strong>Print-perfect PDFs.</strong> The painted sheet, the Adventurer&rsquo;s Ledger, and more pages of Grimoire if your hero casts. US Letter, ready for pencil and ink.</li>
   <li><strong>Portraits.</strong> Drop in a picture of your hero; it clips into the painted window.</li>
 </ul>
+
+<!-- This section deliberately does not name a competitor. The reasoning,
+     the research and the honest list of where we lose are in
+     docs/COMPETITOR-COMPARISON.md, which is not published. -->
+<h2>How this compares to a fillable PDF</h2>
+
+<p>The best free character tools for fifth edition are automated PDFs. You fill
+them in on a computer and they do the arithmetic for you. They are genuinely
+good &mdash; if you play 5e at a desk, with a laptop open and a shelf of
+sourcebooks beside you, they are hard to beat.</p>
+
+<p>They are also why this app exists. A PDF cannot be a page worth framing, it
+cannot roll a die, and it cannot come to the table in your pocket.</p>
+
+<div class="compare">
+<table>
+  <thead>
+    <tr><th scope="col">&nbsp;</th><th scope="col">An automated PDF</th><th scope="col">Adventurer&rsquo;s Folio</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Where it runs</th>
+      <td>A Windows or macOS desktop, with Adobe Acrobat installed</td>
+      <td>iPhone and iPad</td>
+    </tr>
+    <tr>
+      <th scope="row">On a phone</th>
+      <td>The file opens. The automation does not run</td>
+      <td>The phone <em>is</em> the app</td>
+    </tr>
+    <tr>
+      <th scope="row">Rule sets</th>
+      <td>Fifth edition</td>
+      <td>1st Edition, 2nd Edition,<a href="#next" class="mark">*</a> 5th Edition and the 2024 revision &mdash; each with its own rules engine, not one engine reskinned</td>
+    </tr>
+    <tr>
+      <th scope="row">What it looks like</th>
+      <td>A form, laid out well</td>
+      <td>A painted illuminated page, with your numbers typeset into it</td>
+    </tr>
+    <tr>
+      <th scope="row">Changing a number</th>
+      <td>Click the field and type</td>
+      <td>Tap the number where it sits on the page</td>
+    </tr>
+    <tr>
+      <th scope="row">Dice</th>
+      <td>None. A document cannot roll</td>
+      <td>A 3D tray with collector-grade sets, and a log of every roll</td>
+    </tr>
+    <tr>
+      <th scope="row">Spells</th>
+      <td>Generated spell sheets for your class</td>
+      <td>1,461 spells<a href="#next" class="mark">*</a> that complete themselves as you type on a hero's page &mdash; full text for both fifth-edition rule sets, names and numbers for 1st and 2nd &mdash; plus any list your table imports</td>
+    </tr>
+    <tr>
+      <th scope="row">Handing something over</th>
+      <td>Send the file</td>
+      <td>AirDrop a hero, a spell list, or a single item from one player&rsquo;s pack to another&rsquo;s<a href="#next" class="mark">*</a></td>
+    </tr>
+    <tr>
+      <th scope="row">Printing</th>
+      <td>A printer-friendly form</td>
+      <td>The painted page itself, US Letter, ready for pencil and ink</td>
+    </tr>
+    <tr>
+      <th scope="row">What it costs</th>
+      <td>Free, or pay what you want</td>
+      <td>Free for your first hero. $12.99 once for the rest &mdash; no subscription</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>If you play fifth edition on a desktop and own every sourcebook, the PDFs
+have nine years of head start on us and we would rather say so than pretend
+otherwise. If you play at a table, on a phone, in an edition older than 2014, or
+you simply want the sheet to be beautiful &mdash; that is what this is for.</p>
 
 <h2>What it costs</h2>
 
 <p>No subscription and no renewals. Everything below is a single payment, and
 what you buy stays bought.</p>
 
+<!-- SETTLED 2026-08-12 (Adam): the free rule sets are 1st Edition and the 2024
+     revision, and ONLY those. 2nd Edition, 5th Edition (2014) and 3.5 if it is
+     ever built are all purchases. 1.1 is 2nd Edition's launch boundary, which
+     is the only moment this could be decided — after it ships free, making it
+     paid would take it from someone who already has it. -->
 <h3>Free</h3>
 <ul>
   <li><strong>One hero</strong>, and every live-play feature the app has.</li>
   <li><strong>Two complete rule sets</strong> &mdash; 1st Edition
   (1977&ndash;1988) and the 2024 revision.</li>
+  <li><strong>The spell library that comes with them</strong> &mdash; 689
+  spells across those two rule sets, with no unlock in front of them. A
+  reference behind a paywall is not a reference.<a href="#next" class="mark">*</a></li>
   <li><strong>Two dice sets</strong>, aged ivory and deep red resin, in the
   full 3D tray.</li>
   <li><strong>Printing.</strong> One thing to know: printing a free hero sets
@@ -221,6 +341,12 @@ what you buy stays bought.</p>
 <h3>5th Edition (2014)</h3>
 <ul>
   <li>Adds the 2014 ruleset, its own sheet and its spell tables.</li>
+</ul>
+
+<h3>2nd Edition (1989&ndash;1999)</h3>
+<ul>
+  <li>Adds the 2nd Edition ruleset &mdash; nine classes, seven races, THAC0 and
+  its own saving-throw tables, on its own painted chassis.<a href="#next" class="mark">*</a></li>
 </ul>
 
 <h3>Premium Dice Pack</h3>
@@ -262,8 +388,15 @@ brings it back.</p>
 
 <h3>Is this an official product?</h3>
 <p>No. It is an independent app, not affiliated with or endorsed by any game
-publisher. It ships no adventures, no monsters and no spell descriptions
-&mdash; bring your own books.</p>
+publisher. It ships no adventures and no monsters.</p>
+
+<h3>Where do the spells come from?</h3>
+<p>The fifth-edition spells are the ones the System Reference Document licenses
+under Creative Commons, and they carry their full text.<a href="#next" class="mark">*</a>
+The 1st and 2nd Edition spells are names and printed numbers only &mdash; level,
+range, duration, components &mdash; because those books are not licensed for
+anyone to reprint, and we will not pretend otherwise. Keep the handbook open for
+what a spell does. Anything else your table uses, you can import.</p>
 
 <h2 id="next">What the asterisks mean</h2>
 <p><strong>*</strong> These arrive in the <strong>1.1 update</strong>, free to

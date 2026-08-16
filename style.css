@@ -119,6 +119,27 @@ figcaption {
   margin-top: .5rem;
 }
 
+/* The walkthrough video. Matched to `figure img` so a video and a still sit
+   identically in the measure — same radius, rule and shadow, so the page does
+   not visibly change shape when one replaces the other. */
+figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--rule);
+  box-shadow: 0 2px 14px rgba(43, 33, 24, .18);
+  background: #14100a;
+}
+/* Licence attribution, not commentary: smaller and quieter than a figcaption,
+   but deliberately NOT hidden — CC-BY requires it to be visible. */
+.credit {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: .78rem;
+  margin: .6rem 0 0;
+}
+
 /* The playtable render, wider than the measure. */
 .hero { margin: .5rem 0 2rem; }
 .hero img { border-radius: 10px; }
@@ -154,6 +175,41 @@ figcaption {
   margin: 1.5rem 0 2.5rem;
 }
 .heroes figcaption { font-size: .82rem; }
+
+/* The comparison table.
+   THE WRAPPER SCROLLS, NOT THE PAGE. Three columns of prose cannot fit a
+   narrow phone at a readable size, and a table that overflows its parent takes
+   the whole document sideways with it — every section on the page then scrolls
+   horizontally to accommodate one element. `overflow-x: auto` on the wrapper
+   confines that to the table, and `min-width` gives it something to scroll to
+   rather than crushing the columns to two words each. */
+.compare { overflow-x: auto; margin: 1.25rem 0 2rem; }
+.compare table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 34rem;
+  font-size: .95rem;
+}
+.compare th, .compare td {
+  text-align: left;
+  vertical-align: top;
+  padding: .6rem .7rem;
+  border-bottom: 1px solid var(--rule);
+}
+.compare thead th {
+  font-size: .82rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-bottom-width: 2px;
+}
+/* The first column is the question, not an answer — it reads as a row label. */
+.compare tbody th { font-weight: 600; width: 26%; }
+/* Ours is the column being argued for, so it carries the weight. The tint is
+   the parchment card colour, not a highlight: a coloured band would read as an
+   ad inside a page that is otherwise a document. */
+.compare td:last-child { background: rgba(255, 255, 255, 0.35); }
+.compare tbody tr:last-child th, .compare tbody tr:last-child td { border-bottom: none; }
 
 @media (max-width: 46rem) {
   .split { grid-template-columns: 1fr; gap: 1.1rem; }
