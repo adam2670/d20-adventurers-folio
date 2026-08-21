@@ -62,6 +62,20 @@ table.</p>
      Pages repo buys nothing. The POSTER is local on purpose: if the remote ever
      moves, the page still shows a still rather than a black rectangle.
 
+     BUT THE POSTER IS WHY THE FAILURE IS SILENT, WHICH IS THE OPPOSITE OF WHAT
+     THAT SENTENCE ASSUMES. A reader whose video 404s sees a handsome still and
+     a play button that does nothing, and nobody — not them, not either lane —
+     learns the demo is gone. This file is the only place the two websites
+     touch: the video is served from praxis-hq.ai, which belongs to the
+     Infrastructure lane, and is hot-linked here rather than copied on purpose
+     (one canonical asset beats two copies drifting apart; agreed with that
+     lane 2026-08-21, and recorded in ~/Claude/LANES.md). Infrastructure has
+     taken on telling this lane before that file is renamed, moved or
+     re-encoded. The `onerror` below is the belt to that braces: if it ever
+     moves while nobody is watching, the page says so out loud instead of
+     lying quietly. `preload="none"` means the error fires when a reader
+     presses play, which is exactly when it matters.
+
      NO <track> element. The captions are burned into the picture, which is why
      the cut needs no sidecar and cannot fall out of sync with one.
 
@@ -73,7 +87,13 @@ table.</p>
 <figure class="wide">
   <video controls preload="none" width="1920" height="1080"
          poster="img/poster-folio.jpg"
-         src="https://praxis-hq.ai/assets/d20-folio-demo.mp4"></video>
+         src="https://praxis-hq.ai/assets/d20-folio-demo.mp4"
+         onerror="this.hidden=true;
+                  document.getElementById('demo-unavailable').hidden=false"></video>
+  <p id="demo-unavailable" hidden>The walkthrough is not loading just now. It
+  lives at <a href="https://praxis-hq.ai/assets/d20-folio-demo.mp4">praxis-hq.ai</a>
+  &mdash; and if you are seeing this, the link has moved and we would like to
+  know.</p>
   <figcaption>A minute and a half, end to end &mdash; the sheet, the spell
   library, the dice and a printed page. Captioned on screen.</figcaption>
 </figure>
