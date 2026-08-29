@@ -40,19 +40,32 @@ tabletop roleplaying &mdash; keep your heroes as living sheets on iPhone and
 iPad, roll dice that feel like dice, and print a page worth putting on the
 table.</p>
 
-<!-- ON APPROVAL, replace the paragraph inside this card with:
-       <p style="margin-bottom:0"><a href="https://apps.apple.com/app/id6797734128">Download
-       on the App Store</a> &mdash; free, with two complete rule sets.</p>
-     and delete the class="pending" so it stops reading as a status note.
+<!-- DONE 2026-08-28 21:35 by Infrastructure. 1.0 went READY_FOR_SALE at
+     15:17 EDT and this card still read "with Apple for review" for six
+     hours -- every flyer QR scan landing on "not out yet", and the
+     Download link pointing back at this same page. Verified the app was
+     genuinely live via the iTunes lookup BEFORE publishing a link to it:
+     D20 Adventurers Folio, v1.0, free. A review state is not evidence a
+     store link works.
+
+     THIS repo is the one that serves. The copy under
+     ~/Claude/Adventurers Folio/site/ publishes nothing -- and it has a
+     post-commit hook that pushes instantly, so editing THERE feels
+     published and is not. That asymmetry cost an hour tonight: the fix
+     was written, committed and pushed to the wrong repo first, and the
+     live page kept saying the app was unavailable the whole time.
+
+     If a future version is ever pending again, restore the status text
+     and class="pending" -- but never leave a Download link pointing at a
+     page that says the app is unavailable.
      The printed flyers' QR code points at this page, so this card is the
      first thing a reader of one is looking for. -->
-<div class="card pending" id="get">
+<div class="card" id="get">
   <h3 style="margin-top:0">Getting it</h3>
-  <p style="margin-bottom:0">The Folio is with Apple for review. The App Store
-  link lands on this page the day it is approved &mdash; the app is free, with
-  two complete rule sets, one hero, the dice tray and printing. The Folio is a
-  single purchase that lifts the one-hero limit and unlocks the painted class
-  pages.</p>
+  <p style="margin-bottom:0"><a href="https://apps.apple.com/app/id6797734128">Download
+  on the App Store</a> &mdash; free, with two complete rule sets, one hero, the
+  dice tray and printing. The Folio is a single purchase that lifts the one-hero
+  limit and unlocks the painted class pages.</p>
 </div>
 
 <!-- The walkthrough. Placed directly under "Getting it" because a reader
