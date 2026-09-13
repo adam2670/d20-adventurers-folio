@@ -7,15 +7,18 @@ Marketing, support and privacy pages for the iOS app, served by GitHub Pages.
 - `privacy.html` — privacy policy (App Store **Privacy Policy URL**)
 - `style.css` — shared styles
 
-Everything is self-contained: no fonts, scripts, images or trackers are fetched
-from anywhere, so the pages load instantly and there is nothing to break.
+Almost everything is self-contained: no fonts, scripts or trackers are fetched
+from anywhere. The one exception is the walkthrough video on `index.html`, which
+is served from praxis-hq.ai (the privacy page says so).
 
 The app itself lives in a separate private repository. This repo is public only
 because App Store Connect requires publicly reachable URLs.
 
 ## ⚠️ THERE IS A SECOND COPY OF THESE PAGES, AND IT IS NOT THE ONE THAT SERVES
 
-`Adventurers Folio/site/` in the app repo holds the same four files. **This repo
+`Adventurers Folio/site/` in the app repo once held the same four files. It now
+holds pointers and `README-THIS-PUBLISHES-NOTHING.md`, and its copies are not kept
+in step. **This repo
 is the one GitHub Pages publishes** — `adam2670.github.io/d20-adventurers-folio`
 — and the App Store's Marketing, Support and Privacy URLs all point here.
 
